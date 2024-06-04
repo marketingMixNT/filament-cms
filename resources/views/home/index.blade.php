@@ -2,14 +2,17 @@
 
   <x-HeroSlider :headerSlides="$headerSlides"/>
     
-    <p>test</p>
-    {{-- @foreach ($apartments as $apartment)
-    <div class="border flex flex-col justify-center items-center gap-12">
+  
+  <div>
+    <h2 class="text-7xl mt-24 font-bold uppercase text-center">zalety</h2>
+      @foreach ($advantages as $advantage)
+      <div class=" flex flex-col  justify-center items-center gap-12 py-6">
         
-        <h2>{{$apartment['name']}}</h2>
-        <img src="{{asset('/storage/'. $apartment['thumbnail'])}}" alt="{{$apartment['name']}}" class="w-[400px]">
-        <p>{!!$apartment['description']!!}</p>
+        <h2>{{$advantage['title']}}</h2>
+        <img src="{{asset('/storage/'. $advantage['image'])}}" alt="{{$advantage['title']}}" class="w-[400px]">
+        <p>{!!$advantage['description']!!}</p>
+      </div>
         @endforeach
-    </div> --}}
+    </div>
     
 </x-layouts.Main>
