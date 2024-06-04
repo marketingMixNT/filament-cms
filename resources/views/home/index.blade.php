@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CMS</title>
-    @vite('resources/css/app.css')
+<x-layouts.Main>
 
-</head>
-<body>
-    <h1>test</h1>
-</body>
-</html>
+  <x-HeroSlider :headerSlides="$headerSlides"/>
+    
+    <p>test</p>
+    {{-- @foreach ($apartments as $apartment)
+    <div class="border flex flex-col justify-center items-center gap-12">
+        
+        <h2>{{$apartment['name']}}</h2>
+        <img src="{{asset('/storage/'. $apartment['thumbnail'])}}" alt="{{$apartment['name']}}" class="w-[400px]">
+        <p>{!!$apartment['description']!!}</p>
+        @endforeach
+    </div> --}}
+    
+</x-layouts.Main>
