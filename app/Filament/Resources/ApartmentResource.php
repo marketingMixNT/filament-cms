@@ -21,12 +21,20 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 
+use Filament\Resources\Concerns\Translatable;
 
 
 
 
 class ApartmentResource extends Resource
 {
+
+    use Translatable;
+
+    public static function getTranslatableLocales(): array
+    {
+        return ['pl', 'en'];
+    }
     protected static ?string $model = Apartment::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Filament\Resources\AttractionResource\Pages;
+namespace App\Filament\Resources\OfferResource\Pages;
 
-use App\Filament\Resources\AttractionResource;
+use App\Filament\Resources\OfferResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
-
-use Filament\Resources\Pages\ListRecords;
-
-class CreateAttraction extends CreateRecord
+class CreateOffer extends CreateRecord
 {
+
     use CreateRecord\Concerns\Translatable;
+
+    protected static string $resource = OfferResource::class;
 
     protected function getHeaderActions(): array
     {
@@ -20,5 +20,4 @@ class CreateAttraction extends CreateRecord
             // ...
         ];
     }
-    protected static string $resource = AttractionResource::class;
 }

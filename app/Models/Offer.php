@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 use Spatie\Translatable\HasTranslations;
 
 
-class Advantages extends Model
+class Offer extends Model
 {
     use HasFactory;
 
@@ -17,6 +18,5 @@ class Advantages extends Model
     protected $fillable = ['sort'];
 
     
-    public $translatable = ['title', 'description'];
-   
+    public $translatable = ['title', 'description','nights','food'];
 }

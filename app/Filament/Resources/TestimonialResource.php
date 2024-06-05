@@ -14,10 +14,18 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+use Filament\Resources\Concerns\Translatable;
 
 
 class TestimonialResource extends Resource
 {
+
+    use Translatable;
+
+    public static function getTranslatableLocales(): array
+    {
+        return ['pl', 'en'];
+    }
     protected static ?string $model = Testimonial::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

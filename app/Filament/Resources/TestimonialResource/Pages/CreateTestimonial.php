@@ -8,5 +8,15 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateTestimonial extends CreateRecord
 {
+
+    use CreateRecord\Concerns\Translatable;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\LocaleSwitcher::make(),
+            // ...
+        ];
+    }
     protected static string $resource = TestimonialResource::class;
 }
