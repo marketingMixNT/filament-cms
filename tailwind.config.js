@@ -4,10 +4,47 @@ export default {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    './app/Filament/**/*.php',
+    './resources/views/filament/**/*.blade.php',
+    './vendor/filament/**/*.blade.php',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+          'xs': "390px",
+          '3xl':'1920px',
+          'max': "2200px",
+      },
+      colors: {
+          primary: {
+              400: "#b08353",
+              600:'#8c6842'
+          },
+          secondary: {
+              400: "#202e20",
+              600:'#172117'
+          },
+          bgPrimary: "#fffcf4",
+          bgSecondary: "#202e20",
+          bgThird: "#fdf0e2",
+          bgFourth:'#f1cfc3',
+
+          fontWhite:"#ffffff",
+          fontPrimary:"#b08353",
+          fontSecondary:"#fab6ae",
+          fontThird:"#676e5c"
+      },
+      fontFamily:{
+        text:[ "Questrial", "sans-serif"],
+        heading:[  "Mulish", "sans-serif"],
+       handwritting:[  "Mrs Saint Delafield", "cursive"],
+      }
   },
-  plugins: [],
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+
+  ],
 }
 

@@ -1,6 +1,6 @@
-<div class="swiper hero-carousel w-full h-[93vh] bg-gray-500 relative">
+<div class="swiper hero-carousel w-full h-screen bg-gray-500 relative">
     <div class="swiper-wrapper">
-        <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl font-bold z-50">Tutaj będzie nagłówek</h1>
+        <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-7xl font-semibold z-50 text-heading text-center text-white leading-tight tracking-wide">Villa Górski Raj <br> <span class="font-handwritting font-normal">Odkryj Luksus w Sercu Gór </span></h1>
 
         @foreach ($headerSlides as $slide)
             {
@@ -12,8 +12,8 @@
             }
         @endforeach
 
-        <button class="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-50">
-            click
-        </button>
+        <a href="#o-nas" class="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-50">
+            <img src="{{asset('/icons/arrow-down.svg')}}" alt="" class="animate-pulse w-12">
+        </a>
     </div>
 </div>
