@@ -16,12 +16,7 @@
             </ul>
         </nav>
         
-        <div>
-            <ul class="flex gap-5">
-                <li>PL</li>
-                <li>EN</li>
-            </ul>
-        </div>
+        <x-LanguageSwitcher/>
     </div>
 
 

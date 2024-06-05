@@ -1,6 +1,6 @@
 <x-layouts.Main>
 
-  <x-HeroSlider :headerSlides="$headerSlides"/>
+  {{-- <x-HeroSlider :headerSlides="$headerSlides"/>
     
   
   <div>
@@ -13,6 +13,11 @@
         <p>{!!$advantage['description']!!}</p>
       </div>
         @endforeach
-    </div>
+    </div> --}}
+
+
+    @foreach ($attractions as $i)
+      <p>{{$i['title']}}</p>
+    @endforeach
     
 </x-layouts.Main>

@@ -16,4 +16,9 @@ class ListAdvantages extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    public function getTitle(): string
+    {
+        return __('Edytuj Zalety');
+    }
 }

@@ -17,12 +17,8 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 
-
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
-
-
-
 
 class AdvantagesResource extends Resource
 {
@@ -34,9 +30,9 @@ class AdvantagesResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title'),
-                FileUpload::make('image'),
-                Textarea::make('description')->autosize(),
+                TextInput::make('title')->label('Tytuł'),
+                FileUpload::make('image')->label('Obraz'),
+                Textarea::make('description')->autosize()->label('Opis'),
             ]);
     }
 
@@ -53,6 +49,7 @@ class AdvantagesResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -75,5 +72,19 @@ class AdvantagesResource extends Resource
             'create' => Pages\CreateAdvantages::route('/create'),
             'edit' => Pages\EditAdvantages::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('Zalety');
+    }
+    public static function getPluralLabel(): string
+    {
+        return __('Zalety');
+    }
+
+    public static function getLabel(): string
+    {
+        return __('Zaleta');
     }
 }

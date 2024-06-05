@@ -15,10 +15,19 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\TextColumn;
 
+use Filament\Resources\Concerns\Translatable;
 
 
 class AttractionResource extends Resource
 {
+
+    use Translatable;
+
+    public static function getTranslatableLocales(): array
+    {
+        return ['pl', 'en'];
+    }
+
     protected static ?string $model = Attraction::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

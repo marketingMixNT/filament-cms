@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateAdvantages extends CreateRecord
 {
     protected static string $resource = AdvantagesResource::class;
+
+    public function getTitle(): string
+    {
+        return __('Edytuj Zalety');
+    }
 }
