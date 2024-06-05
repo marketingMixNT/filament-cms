@@ -2,26 +2,27 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\OfferResource\Pages;
-use App\Filament\Resources\OfferResource\RelationManagers;
-use App\Models\Offer;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Offer;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
 
+use Filament\Tables\Columns\ImageColumn;
+
+
+use Filament\Forms\Components\FileUpload;
+use Illuminate\Database\Eloquent\Builder;
 use Filament\Resources\Concerns\Translatable;
 
-
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\FileUpload;
-
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ImageColumn;
+use App\Filament\Resources\OfferResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\OfferResource\RelationManagers;
 
 
 class OfferResource extends Resource
@@ -41,12 +42,41 @@ class OfferResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')->label('Nazwa'),
-                FileUpload::make('thumbnail')->label('Miniaturka'),
-                Textarea::make('description')->autosize()->label('Opis'),
-                TextInput::make('price')->integer()->label('Cena'),
-                TextInput::make('nights')->label('Ilość Nocy'),
-                TextInput::make('food')->label('Wyzywienie'),
+                TextInput::make('title')->label('Tytuł')
+                ->required()
+                ->minLength(2)
+                ->maxLength(255),
+
+                FileUpload::make('thumbnail')->label('Miniaturka')
+                ->required()
+                ->maxSize(2048)
+                ->optimize('webp')
+                ->imageEditor()
+                ->imageEditorAspectRatios([
+                    null,
+                    '16:9',
+                    '4:3',
+                    '1:1',
+                ])
+                ->imageEditorViewportWidth('1920')
+                ->imageEditorViewportHeight('1080'),
+
+                Textarea::make('description')->label('Krótki Opis')
+                ->required()
+                ->autosize(),
+                
+                TextInput::make('price')->label('Cena')
+                ->required()
+                ->integer(),
+
+                TextInput::make('nights')->label('Min. Ilość Nocy')
+                ->required()
+                ->integer(),
+    
+                TextInput::make('food')->label('Wyżywienie')
+                ->required()
+                ->minLength(2)
+                ->maxLength(255),
             ]);
     }
 
@@ -55,8 +85,13 @@ class OfferResource extends Resource
         return $table
         ->reorderable('sort')
             ->columns([
-                TextColumn::make('title')->sortable()->searchable(),
-                ImageColumn::make('thumbnail'),
+                TextColumn::make('sort')->label('#'),
+                ImageColumn::make('thumbnail')->label('Miniaturka'),
+                TextColumn::make('title')->label('Tytuł')
+                ->description(fn (Offer $record): string => Str::limit($record->description, 100, '...')) // Skracanie opisu z wielokropkiem
+                ->sortable()
+                ->searchable(),
+                
             ])
             ->filters([
                 //

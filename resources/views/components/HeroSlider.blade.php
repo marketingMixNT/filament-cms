@@ -1,6 +1,6 @@
 <div class="swiper hero-carousel w-full h-screen bg-gray-500 relative">
     <div class="swiper-wrapper">
-        <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-7xl font-semibold z-50 text-heading text-center text-white leading-tight tracking-wide">Villa Górski Raj <br> <span class="font-handwritting font-normal">Odkryj Luksus w Sercu Gór </span></h1>
+        <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-7xl font-semibold z-50 font-heading text-center text-white leading-tight tracking-wide">Villa Górski Raj <br> <span class="font-handwritting font-normal text-6xl">Odkryj Luksus w Sercu Gór </span></h1>
 
         @foreach ($headerSlides as $slide)
             {

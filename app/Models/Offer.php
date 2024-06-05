@@ -18,5 +18,5 @@ class Offer extends Model
     protected $fillable = ['sort'];
 
     
-    public $translatable = ['title', 'description','nights','food'];
+    public $translatable = ['title', 'description','food'];
 }

@@ -17,26 +17,26 @@ export default {
       },
       colors: {
           primary: {
-              400: "#b08353",
-              600:'#8c6842'
+              400: "#bf9b30",
+              // 600:'#8c6842'
           },
-          secondary: {
-              400: "#202e20",
-              600:'#172117'
-          },
-          bgPrimary: "#fffcf4",
-          bgSecondary: "#202e20",
-          bgThird: "#fdf0e2",
-          bgFourth:'#f1cfc3',
+          // secondary: {
+          //     400: "#202e20",
+          //     600:'#172117'
+          // },
+          // bgPrimary: "#fffcf4",
+          // bgSecondary: "#202e20",
+          // bgThird: "#fdf0e2",
+          // bgFourth:'#f1cfc3',
 
           fontWhite:"#ffffff",
-          fontPrimary:"#b08353",
-          fontSecondary:"#fab6ae",
-          fontThird:"#676e5c"
+          fontPrimary:"#bf9b30",
+          // fontSecondary:"#fab6ae",
+          // fontThird:"#676e5c"
       },
       fontFamily:{
         text:[ "Questrial", "sans-serif"],
-        heading:[  "Mulish", "sans-serif"],
+        heading:[  "Lora", "serif"],
        handwritting:[  "Mrs Saint Delafield", "cursive"],
       }
   },
