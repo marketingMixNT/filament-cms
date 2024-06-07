@@ -9,6 +9,7 @@ new Swiper(".hero-carousel", {
     effect: "fade",
     // grabCursor: true,
     slidesPerView: 1,
+    
 
     spaceBetween: 30,
     autoplay: {
@@ -21,14 +22,16 @@ new Swiper(".hero-carousel", {
 new Swiper(".offer-carousel", {
     loop: true,
     effect: "fade",
-    grabCursor: true,
+    // grabCursor: true,
     slidesPerView: 3,
-  
+    
 
     spaceBetween: 50,
     autoplay: {
         delay: 3500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
+        pauseOnMouseEnter: true,
+        
     },
     navigation: {
         nextEl: ".swiper-button-next",

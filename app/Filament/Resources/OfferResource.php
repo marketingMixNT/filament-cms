@@ -38,6 +38,8 @@ class OfferResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-sparkles';
 
+    protected static ?string $navigationGroup = 'Treści';
+
     public static function form(Form $form): Form
     {
         return $form

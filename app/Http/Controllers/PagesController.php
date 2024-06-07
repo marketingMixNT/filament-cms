@@ -14,12 +14,12 @@ class PagesController extends Controller
     public function home () {
 
         $apartments = Apartment::all();
-        $headerSlides = HeaderSlider::all();
+        $headerSlides = HeaderSlider::orderBy('sort')->get();
         $advantages = Advantages::orderBy('sort')->get();
         $attractions = Attraction::all();
         $offers = Offer::orderBy('sort')->get();
 
-        // dd($attractions);
+        // dd($headerSlides);
 
 
         return view('home.index',['headerSlides'=>$headerSlides, 'advantages'=>$advantages, 'attractions'=>$attractions,'offers'=>$offers]);
