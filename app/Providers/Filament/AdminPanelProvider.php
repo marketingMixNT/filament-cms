@@ -10,14 +10,15 @@ use Firefly\FilamentBlog\Blog;
 use Filament\Support\Colors\Color;
 use Filament\Http\Middleware\Authenticate;
 use Filament\SpatieLaravelTranslatablePlugin;
+use App\Filament\Resources\CustomMediaResource;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
-use Filament\Http\Middleware\DispatchServingFilamentEvent;
 
+use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 
@@ -62,7 +63,11 @@ class AdminPanelProvider extends PanelProvider
             ->plugin(SpatieLaravelTranslatablePlugin::make() ->defaultLocales(['pl', 'en']),)
             
             ->plugins([
-                Blog::make()
+                Blog::make(),
+              
+               
+        
+                
             ])
             ;
 

@@ -21,6 +21,9 @@
     <x-Header />
     {{ $slot }}
 
+
+    <x-Footer/>
+
 </body>
 
 </html>
