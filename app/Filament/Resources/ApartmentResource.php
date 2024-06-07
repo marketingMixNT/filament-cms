@@ -23,6 +23,10 @@ use Filament\Tables\Columns\ImageColumn;
 
 use Filament\Resources\Concerns\Translatable;
 
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
+
+use Guava\FilamentIconPicker\Forms\IconPicker;
 
 
 
@@ -37,7 +41,12 @@ class ApartmentResource extends Resource
     }
     protected static ?string $model = Apartment::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
+
+    protected static ?string $navigationGroup = 'Treści';
+
+
+
 
     public static function form(Form $form): Form
     {
@@ -45,7 +54,14 @@ class ApartmentResource extends Resource
             ->schema([
                 TextInput::make('name'),
                 RichEditor::make('description'),
-                FileUpload::make('thumbnail')
+                FileUpload::make('thumbnail'),
+                Repeater::make('amenities')
+    ->schema([
+        TextInput::make('amenities_name')->required(),
+        IconPicker::make('amenities_icon')
+            ->required(),
+    ])
+    ->columns(2)
 
 
 
@@ -91,5 +107,19 @@ class ApartmentResource extends Resource
             'create' => Pages\CreateApartment::route('/create'),
             'edit' => Pages\EditApartment::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('Apartamenty');
+    }
+    public static function getPluralLabel(): string
+    {
+        return __('Apartamenty');
+    }
+
+    public static function getLabel(): string
+    {
+        return __('Apartament');
     }
 }

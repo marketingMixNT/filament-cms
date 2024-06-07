@@ -8,6 +8,8 @@
         "php": "^8.2",
         "filament/filament": "^3.2",
         "filament/spatie-laravel-translatable-plugin": "^3.2",
+        "firefly/filament-blog": "^2.0",
+        "guava/filament-icon-picker": "^2.0",
         "joshembling/image-optimizer": "^1.4",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",

@@ -18,4 +18,8 @@ class Apartment extends Model
     // protected $fillable = ['name', 'description'];
     public $translatable = ['name', 'description'];
     // protected $casts = ['name', 'description'];
+
+    protected $casts = [
+        'amenities' => 'array',
+    ];
 }

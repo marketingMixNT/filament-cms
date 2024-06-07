@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Advantages;
+use App\Models\News;
+use App\Models\Offer;
 use App\Models\Apartment;
+use App\Models\Advantages;
 use App\Models\Attraction;
 use App\Models\HeaderSlider;
-use App\Models\Offer;
+use Firefly\FilamentBlog\Blog;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -24,4 +26,12 @@ class PagesController extends Controller
 
         return view('home.index',['headerSlides'=>$headerSlides, 'advantages'=>$advantages, 'attractions'=>$attractions,'offers'=>$offers]);
     }
+
+    // public function newses () {
+    //     $newses = Blog::all();
+
+    //     // dd($newses);
+
+    //     return view('newses.index',['newses' => $newses]);
+    // }
 }
