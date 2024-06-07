@@ -19,6 +19,26 @@ new Swiper(".hero-carousel", {
     modules: [Autoplay, EffectFade],
 });
 
+new Swiper(".advantages-carousel", {
+    loop: true,
+    effect: "fade",
+    grabCursor: true,
+    slidesPerView: 1,
+    effect: "fade",
+
+    
+   
+    navigation: {
+        nextEl: ".advantages-next",
+        prevEl: ".advantages-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination", 
+        clickable: true, 
+    },
+    modules: [Autoplay, Navigation, Pagination,EffectFade],
+});
+
 new Swiper(".offer-carousel", {
     loop: true,
     effect: "fade",

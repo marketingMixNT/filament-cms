@@ -1,6 +1,6 @@
 <section id="o-nas" class="py-36">
 
-    <div class="text-center pb-32">
+    <div class="text-center pb-24">
 
         <x-Heading title="Doświadcz niezapomnianej przygody" subtitle="Poznaj nasze propozycje na pobyt"
             colorSubtitle='text-fontPrimary' />
