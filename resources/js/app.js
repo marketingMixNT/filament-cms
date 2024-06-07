@@ -54,8 +54,8 @@ new Swiper(".offer-carousel", {
         
     },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".offer-next",
+        prevEl: ".offer-prev",
     },
     pagination: {
         el: ".swiper-pagination", 

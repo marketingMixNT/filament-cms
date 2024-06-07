@@ -36,9 +36,9 @@ export default {
           // fontThird:"#676e5c"
       },
       fontFamily:{
-        text:[ "Questrial", "sans-serif"],
-        heading:[  "Lora", "serif"],
-       handwritting:[  "Mrs Saint Delafield", "cursive"],
+        text:[ "Raleway", "sans-serif"],
+        heading:[  "Raleway", "sans-serif"],
+       handwritting:[  "Dancing Script", "cursive"],
       }
   },
   },

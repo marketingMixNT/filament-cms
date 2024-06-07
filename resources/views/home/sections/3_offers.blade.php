@@ -27,7 +27,7 @@
                                     </h2>
                                 </div>
                             </div>
-                          
+
                             <div
                                 class="bg-white absolute left-0 right-0 top-0 bottom-4 p-4 shadow-xl opacity-0 group-hover:opacity-100 duration-500">
                                 <div
@@ -44,12 +44,12 @@
                                             <img src="{{ asset('icons/clock.svg') }}" alt="" class="w-4">
                                             <span class="text-sm">min.
                                                 {{ $offer['nights'] }} noce</span>
-                                            </div>
-                                            <div class="flex gap-3 self-start">
-                                                <img src="{{ asset('icons/fork.svg') }}" alt="" class="w-4">
-                                                <span class="text-sm">{{ $offer['food'] }}</span>
-                                            </div>
                                         </div>
+                                        <div class="flex gap-3 self-start">
+                                            <img src="{{ asset('icons/fork.svg') }}" alt="" class="w-4">
+                                            <span class="text-sm">{{ $offer['food'] }}</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </a>
@@ -60,6 +60,15 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+
+            <div class="flex justify-center items-center mt-16 gap-6">
+
+                <button class="offer-prev bg-black hover:bg-primary-400 duration-500  p-3 "><img
+                        src="{{ asset('/icons/arrow-left.svg') }}" alt="" class="w-7"></button>
+                <a href="#" class="bg-primary-400 py-4 px-12 hover:bg-black duration-500 text-white">Zobacz wszystkie</a>
+                <button class="offer-next bg-black hover:bg-primary-400  duration-500 p-3"><img
+                        src="{{ asset('/icons/arrow-right.svg') }}" alt="" class="w-7"></button>
             </div>
         </div>
 
